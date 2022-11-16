@@ -77,14 +77,14 @@ TEMPLATES = [
     },
 ]
 
-# WSGI_APPLICATION = 'chat.wsgi.application'
+WSGI_APPLICATION = 'chat.wsgi.application'
 ASGI_APPLICATION = 'chat.asgi.application'
 
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [('redis://red-ccjhkqmn6mpuvkloq1gg', 6379)],
+            "hosts": ["rediss://red-ccjhkqmn6mpuvkloq1gg:WoZgbryQdSzjcwIEdS8snRkOzedukdKQ@oregon-redis.render.com:6379/0"],
         },
     },
 }
