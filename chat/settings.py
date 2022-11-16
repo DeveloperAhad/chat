@@ -81,11 +81,13 @@ TEMPLATES = [
 ASGI_APPLICATION = 'chat.asgi.application'
 
 CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'channels.layers.InMemoryChannelLayer',
-    }
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [('redis://red-ccjhkqmn6mpuvkloq1gg', 6379)],
+        },
+    },
 }
-
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
